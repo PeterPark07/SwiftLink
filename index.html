@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftLink Redirect</title>
+    <script>
+        // Replace 'https://example.com' with the URL you want to redirect to
+        var redirectUrl = 'https://webchatone.onrender.com/';
+
+        // Redirect function
+        function redirectToAnotherPage() {
+            window.location.replace(redirectUrl);
+        }
+
+        // Display a message about service maintenance
+        function showMaintenanceMessage() {
+            var messageContainer = document.getElementById('message-container');
+            messageContainer.innerHTML = '<p>The service you are looking for is currently inactive due to maintenance. It is spinning back up, and the estimated time until completion is 1 minute. Thank you for your patience.</p>';
+        }
+
+        // Automatically redirect after a certain time (e.g., 5 seconds)
+        setTimeout(redirectToAnotherPage, 1000); // Redirect after 1 second
+        setTimeout(showMaintenanceMessage, 3000); // Display maintenance message after 3 seconds
+    </script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to SwiftLink Redirect</h1>
+    <div id="message-container"></div>
+    <p>You will be redirected to another website shortly...</p>
+    <p>If you are not redirected, <a href="https://example.com">click here</a>.</p>
+</body>
+</html>
