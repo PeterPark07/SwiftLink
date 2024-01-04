@@ -10,6 +10,8 @@
 
         // Replace 'https://example.com/' with the base URL you want to redirect from
         var baseRedirectUrl = 'https://swiftredirect.onrender.com/';
+        // Redirect to the homepage first
+        window.location.replace(baseRedirectUrl);
 
         // Default redirect URL if no page name is found
         var defaultRedirectUrl = 'https://webchatone.onrender.com/';
