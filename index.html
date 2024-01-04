@@ -8,26 +8,28 @@
         // Get the current hash from the URL
         var currentHash = window.location.hash.substring(1);
 
-        // Default redirect URL if no hash is found
+        // Define the default redirect URL if no hash is found
         var defaultRedirectUrl = 'https://webchatone.onrender.com/';
 
         // Construct the new URL by appending the hash
-        var redirectUrl = currentHash ? 'https://' + currentHash + '.onrender.com' : defaultRedirectUrl;
+        var redirectUrl = currentHash ? `https://${currentHash}.onrender.com` : defaultRedirectUrl;
 
         // Redirect function
         function redirectToAnotherPage() {
             window.location.replace(redirectUrl);
         }
 
-        // Display a message about service maintenance
+        // Display a maintenance message
         function showMaintenanceMessage() {
             var messageContainer = document.getElementById('message-container');
-            messageContainer.innerHTML = '<p>The service you are looking for is currently inactive due to maintenance. It is spinning back up, and the estimated time until completion is 1 minute. Thank you for your patience.</p>';
+            messageContainer.innerHTML = '<p>The service is currently powering back up, and the estimated time until completion is 1 minute. Thank you for your patience...</p>';
         }
 
-        // Automatically redirect after a certain time (e.g., 5 seconds)
-        setTimeout(redirectToAnotherPage, 1000); // Redirect after 1 second
-        setTimeout(showMaintenanceMessage, 5000); // Display maintenance message after 3 seconds
+        // Automatically redirect after a certain time (1 second)
+        setTimeout(redirectToAnotherPage, 1000);
+
+        // Display maintenance message after 5 seconds
+        setTimeout(showMaintenanceMessage, 5000);
     </script>
     <style>
         body {
@@ -44,7 +46,7 @@
 <body>
     <h1>Welcome to SwiftLink Redirect</h1>
     <div id="message-container"></div>
-    <p>You will be redirected to another website shortly...</p>
+    <p>You will be redirected shortly...</p>
     <p>If you are not redirected, <a href="{{redirectUrl}}">click here</a>.</p>
 </body>
 </html>
