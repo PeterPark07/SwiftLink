@@ -5,25 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwiftLink Redirect</title>
     <script>
-        // Replace 'https://example.com/' with the base URL you want to redirect from
-        var baseRedirectUrl = 'https://swiftredirect.onrender.com/';
+        // Get the current hash from the URL
+        var currentHash = window.location.hash.substring(1);
 
-        // Get the current page name from the URL
-        var currentPageName = window.location.pathname.substring(1);
-
-        // Check if the base URL has a path
-        if (window.location.pathname !== '/') {
-            // Redirect to the homepage first if there's a path
-            window.location.replace(baseRedirectUrl);
-        }
-
-        // Default redirect URL if no page name is found
+        // Default redirect URL if no hash is found
         var defaultRedirectUrl = 'https://webchatone.onrender.com/';
-        
-        // Construct the new URL by appending the page name
-        var redirectUrl = currentPageName ? 'https://' + currentPageName + '.onrender.com' : defaultRedirectUrl;
 
-        
+        // Construct the new URL by appending the hash
+        var redirectUrl = currentHash ? 'https://' + currentHash + '.onrender.com' : defaultRedirectUrl;
+
         // Redirect function
         function redirectToAnotherPage() {
             window.location.replace(redirectUrl);
